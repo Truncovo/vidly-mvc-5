@@ -26,9 +26,9 @@ namespace Vidly.Controllers
 
       public ActionResult Edit(int id)
       {
-
          return Content("id:" + id);
       }
+
       [Route("Iceland/{Name}/{Slide:regex(\\d{2}):range(1,55)}")]
       public ActionResult ShowSlide(string name, int? slide)
       {
@@ -37,6 +37,26 @@ namespace Vidly.Controllers
          return Content(name + " slide: " + slide);
       }
 
+      [Route("Iceland/{id}")]
+      public ActionResult Catalog(int id)
+      {
+         return View(catalog.Catalogs[id]);
+      }
+      private CatalogCollection catalog = new CatalogCollection()
+      {
+         Catalogs = new List<Catalog>()
+         {
+            new Catalog() {Name = "WestFjords",Id = 0},
+            new Catalog() {Name = "LandmanaLaugar",Id = 1},
+            new Catalog() {Name = "Viking rafting",Id = 2},
+         }
+      };
+
+      [Route("Iceland")]
+      public ActionResult Iceland()
+      {
+         return View(catalog);
+      }
 
       public ActionResult Slide(string presentationName, int? slide)
       {

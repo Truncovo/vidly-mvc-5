@@ -1,0 +1,21 @@
+﻿@using System.Security.Cryptography
+@model Vidly.Models.CatalogCollection
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>COLECTIONS</h2>
+
+@if (Model.Catalogs.Count == 0)
+{
+    <h3>no data</h3>
+
+}else
+{ 
+    <ul>
+        @foreach (var col in Model.Catalogs)
+        {
+            <li>@col.Name </li>
+        }
+    </ul>
+}
