@@ -12,10 +12,12 @@
 
 }else
 { 
-    <ul>
+    <table>
         @foreach (var col in Model.Catalogs)
         {
-            <li>@col.Name </li>
+            <tr>
+                <td>@Html.ActionLink(col.Name, "Catalog", "Catalog", new { id = col.Id }, null)</td>
+            </tr>
         }
-    </ul>
+    </table>
 }
