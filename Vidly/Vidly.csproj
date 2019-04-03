@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -171,11 +173,52 @@
     <Compile Include="Migrations\201904021330089_Init.Designer.cs">
       <DependentUpon>201904021330089_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904031442215_Second.cs" />
+    <Compile Include="Migrations\201904031442215_Second.Designer.cs">
+      <DependentUpon>201904031442215_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031457350_deleteSecond.cs" />
+    <Compile Include="Migrations\201904031457350_deleteSecond.Designer.cs">
+      <DependentUpon>201904031457350_deleteSecond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031856006_PopulateCatalogs.cs" />
+    <Compile Include="Migrations\201904031856006_PopulateCatalogs.Designer.cs">
+      <DependentUpon>201904031856006_PopulateCatalogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031913287_nameRequired.cs" />
+    <Compile Include="Migrations\201904031913287_nameRequired.Designer.cs">
+      <DependentUpon>201904031913287_nameRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904032143327_ColectionRenamedToPresentation.cs" />
+    <Compile Include="Migrations\201904032143327_ColectionRenamedToPresentation.Designer.cs">
+      <DependentUpon>201904032143327_ColectionRenamedToPresentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904032147095_CreatedCollection.cs" />
+    <Compile Include="Migrations\201904032147095_CreatedCollection.Designer.cs">
+      <DependentUpon>201904032147095_CreatedCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904032152099_ForeignKeysAddedToPresentantionAndCollection.cs" />
+    <Compile Include="Migrations\201904032152099_ForeignKeysAddedToPresentantionAndCollection.Designer.cs">
+      <DependentUpon>201904032152099_ForeignKeysAddedToPresentantionAndCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904032155046_RequiredAddedToLastForeignKEys.cs" />
+    <Compile Include="Migrations\201904032155046_RequiredAddedToLastForeignKEys.Designer.cs">
+      <DependentUpon>201904032155046_RequiredAddedToLastForeignKEys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904032159459_CollectionIdToPresentation.cs" />
+    <Compile Include="Migrations\201904032159459_CollectionIdToPresentation.Designer.cs">
+      <DependentUpon>201904032159459_CollectionIdToPresentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904032208286_AddedSLides.cs" />
+    <Compile Include="Migrations\201904032208286_AddedSLides.Designer.cs">
+      <DependentUpon>201904032208286_AddedSLides.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Catalog.cs" />
+    <Compile Include="Models\VidlyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -201,7 +244,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -253,6 +298,36 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904021330089_Init.resx">
       <DependentUpon>201904021330089_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031442215_Second.resx">
+      <DependentUpon>201904031442215_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031457350_deleteSecond.resx">
+      <DependentUpon>201904031457350_deleteSecond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031856006_PopulateCatalogs.resx">
+      <DependentUpon>201904031856006_PopulateCatalogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031913287_nameRequired.resx">
+      <DependentUpon>201904031913287_nameRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904032143327_ColectionRenamedToPresentation.resx">
+      <DependentUpon>201904032143327_ColectionRenamedToPresentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904032147095_CreatedCollection.resx">
+      <DependentUpon>201904032147095_CreatedCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904032152099_ForeignKeysAddedToPresentantionAndCollection.resx">
+      <DependentUpon>201904032152099_ForeignKeysAddedToPresentantionAndCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904032155046_RequiredAddedToLastForeignKEys.resx">
+      <DependentUpon>201904032155046_RequiredAddedToLastForeignKEys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904032159459_CollectionIdToPresentation.resx">
+      <DependentUpon>201904032159459_CollectionIdToPresentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904032208286_AddedSLides.resx">
+      <DependentUpon>201904032208286_AddedSLides.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,19 +1,19 @@
 ﻿@using System.Security.Cryptography
-@model Vidly.Models.CatalogCollection
+@model List<Vidly.Models.Presentation>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>COLECTIONS</h2>
 
-@if (Model.Catalogs.Count == 0)
+@if (Model.Count  == 0)
 {
     <h3>no data</h3>
 
 }else
 { 
     <table>
-        @foreach (var col in Model.Catalogs)
+        @foreach (var col in Model)
         {
             <tr>
                 <td>@Html.ActionLink(col.Name, "Catalog", "Catalog", new { id = col.Id }, null)</td>

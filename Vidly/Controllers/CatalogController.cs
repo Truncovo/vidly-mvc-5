@@ -11,9 +11,12 @@ namespace Vidly.Controllers
 {
    public class CatalogController : Controller
    {
+      private ApplicationDbContext _context;
+
+
       public ViewResult Random()
       {
-         var catalog = new Catalog()
+         var catalog = new Presentation()
          {
             Name = "WestFjords",
             Id = 1
@@ -40,21 +43,30 @@ namespace Vidly.Controllers
       [Route("Iceland/{id}")]
       public ActionResult Catalog(int id)
       {
-         return View(catalog.Catalogs[id]);
+         var ce = _context.Catalogs.SingleOrDefault(c => c.Id == id);
+
+         if (ce == null)
+            return HttpNotFound();
+
+         return View(ce);
       }
-      private CatalogCollection catalog = new CatalogCollection()
+      
+
+      public CatalogController()
       {
-         Catalogs = new List<Catalog>()
-         {
-            new Catalog() {Name = "WestFjords",Id = 0},
-            new Catalog() {Name = "LandmanaLaugar",Id = 1},
-            new Catalog() {Name = "Viking rafting",Id = 2},
-         }
-      };
+         _context = new ApplicationDbContext();
+      }
+
+      protected override void Dispose(bool disposing)
+      {
+         base.Dispose(disposing);
+         _context.Dispose();
+      }
 
       [Route("Iceland")]
       public ActionResult Iceland()
       {
+         List<Presentation> catalog = _context.Catalogs.ToList();
          return View(catalog);
       }
 
