@@ -38,4 +38,12 @@ namespace Vidly.Models
       public List<Presentation> Catalogs { get; set; }
 
    }
+
+   public class TripType
+   {
+      public int Id { get; set; }
+      public string Name { get; set; }
+
+
+   }
 }

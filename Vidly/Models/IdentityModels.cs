@@ -22,6 +22,8 @@ namespace Vidly.Models
     {
        public DbSet<Presentation> Catalogs { get; set; }
        public DbSet<Collection> Collections { get; set; }
+       public DbSet<TripType> TripTypes { get; set; }
+
       public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

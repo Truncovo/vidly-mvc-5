@@ -164,6 +164,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -212,6 +213,22 @@
     <Compile Include="Migrations\201904032208286_AddedSLides.cs" />
     <Compile Include="Migrations\201904032208286_AddedSLides.Designer.cs">
       <DependentUpon>201904032208286_AddedSLides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905161211202_FirstAfterWhile.cs" />
+    <Compile Include="Migrations\201905161211202_FirstAfterWhile.Designer.cs">
+      <DependentUpon>201905161211202_FirstAfterWhile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905161229232_AddRuteTypes.cs" />
+    <Compile Include="Migrations\201905161229232_AddRuteTypes.Designer.cs">
+      <DependentUpon>201905161229232_AddRuteTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905161230359_PoluteTripTypes.cs" />
+    <Compile Include="Migrations\201905161230359_PoluteTripTypes.Designer.cs">
+      <DependentUpon>201905161230359_PoluteTripTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905161237532_PoluteTripTypes2.cs" />
+    <Compile Include="Migrations\201905161237532_PoluteTripTypes2.Designer.cs">
+      <DependentUpon>201905161237532_PoluteTripTypes2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -287,6 +304,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -328,6 +346,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904032208286_AddedSLides.resx">
       <DependentUpon>201904032208286_AddedSLides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905161211202_FirstAfterWhile.resx">
+      <DependentUpon>201905161211202_FirstAfterWhile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905161229232_AddRuteTypes.resx">
+      <DependentUpon>201905161229232_AddRuteTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905161230359_PoluteTripTypes.resx">
+      <DependentUpon>201905161230359_PoluteTripTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905161237532_PoluteTripTypes2.resx">
+      <DependentUpon>201905161237532_PoluteTripTypes2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
