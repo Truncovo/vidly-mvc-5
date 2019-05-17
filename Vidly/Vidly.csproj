@@ -161,8 +161,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,8 +172,77 @@
     <Compile Include="Migrations\201905161509562_init.Designer.cs">
       <DependentUpon>201905161509562_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905161517394_AddingMovies.cs" />
+    <Compile Include="Migrations\201905161517394_AddingMovies.Designer.cs">
+      <DependentUpon>201905161517394_AddingMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905170843308_add-miration AddingCustomersTable.cs" />
+    <Compile Include="Migrations\201905170843308_add-miration AddingCustomersTable.Designer.cs">
+      <DependentUpon>201905170843308_add-miration AddingCustomersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905170916503_PoluteCustomers.cs" />
+    <Compile Include="Migrations\201905170916503_PoluteCustomers.Designer.cs">
+      <DependentUpon>201905170916503_PoluteCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905170918375_PoluteCustomersForReal.cs" />
+    <Compile Include="Migrations\201905170918375_PoluteCustomersForReal.Designer.cs">
+      <DependentUpon>201905170918375_PoluteCustomersForReal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905170948402_AddSubModelsTable.cs" />
+    <Compile Include="Migrations\201905170948402_AddSubModelsTable.Designer.cs">
+      <DependentUpon>201905170948402_AddSubModelsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905170949486_AsignSubModelToCustomer.cs" />
+    <Compile Include="Migrations\201905170949486_AsignSubModelToCustomer.Designer.cs">
+      <DependentUpon>201905170949486_AsignSubModelToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905170950467_AsignSubModelToCustomer2.cs" />
+    <Compile Include="Migrations\201905170950467_AsignSubModelToCustomer2.Designer.cs">
+      <DependentUpon>201905170950467_AsignSubModelToCustomer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905170956170_PoluteSubModels.cs" />
+    <Compile Include="Migrations\201905170956170_PoluteSubModels.Designer.cs">
+      <DependentUpon>201905170956170_PoluteSubModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171014223_AddedBrithDate.cs" />
+    <Compile Include="Migrations\201905171014223_AddedBrithDate.Designer.cs">
+      <DependentUpon>201905171014223_AddedBrithDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171016579_AddedBrithDate2.cs" />
+    <Compile Include="Migrations\201905171016579_AddedBrithDate2.Designer.cs">
+      <DependentUpon>201905171016579_AddedBrithDate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171018199_AddUsers.cs" />
+    <Compile Include="Migrations\201905171018199_AddUsers.Designer.cs">
+      <DependentUpon>201905171018199_AddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171020040_AddUsers2.cs" />
+    <Compile Include="Migrations\201905171020040_AddUsers2.Designer.cs">
+      <DependentUpon>201905171020040_AddUsers2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171021377_AddUsers3.cs" />
+    <Compile Include="Migrations\201905171021377_AddUsers3.Designer.cs">
+      <DependentUpon>201905171021377_AddUsers3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171130502_AddGenre.cs" />
+    <Compile Include="Migrations\201905171130502_AddGenre.Designer.cs">
+      <DependentUpon>201905171130502_AddGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171134089_GenreMovieManyToMany.cs" />
+    <Compile Include="Migrations\201905171134089_GenreMovieManyToMany.Designer.cs">
+      <DependentUpon>201905171134089_GenreMovieManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171137069_MoviesEdit.cs" />
+    <Compile Include="Migrations\201905171137069_MoviesEdit.Designer.cs">
+      <DependentUpon>201905171137069_MoviesEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905171137563_MoviesEdit2.cs" />
+    <Compile Include="Migrations\201905171137563_MoviesEdit2.Designer.cs">
+      <DependentUpon>201905171137563_MoviesEdit2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CustemersViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -233,6 +304,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Detail.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -247,6 +324,57 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905161509562_init.resx">
       <DependentUpon>201905161509562_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905161517394_AddingMovies.resx">
+      <DependentUpon>201905161517394_AddingMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905170843308_add-miration AddingCustomersTable.resx">
+      <DependentUpon>201905170843308_add-miration AddingCustomersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905170916503_PoluteCustomers.resx">
+      <DependentUpon>201905170916503_PoluteCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905170918375_PoluteCustomersForReal.resx">
+      <DependentUpon>201905170918375_PoluteCustomersForReal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905170948402_AddSubModelsTable.resx">
+      <DependentUpon>201905170948402_AddSubModelsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905170949486_AsignSubModelToCustomer.resx">
+      <DependentUpon>201905170949486_AsignSubModelToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905170950467_AsignSubModelToCustomer2.resx">
+      <DependentUpon>201905170950467_AsignSubModelToCustomer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905170956170_PoluteSubModels.resx">
+      <DependentUpon>201905170956170_PoluteSubModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171014223_AddedBrithDate.resx">
+      <DependentUpon>201905171014223_AddedBrithDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171016579_AddedBrithDate2.resx">
+      <DependentUpon>201905171016579_AddedBrithDate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171018199_AddUsers.resx">
+      <DependentUpon>201905171018199_AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171020040_AddUsers2.resx">
+      <DependentUpon>201905171020040_AddUsers2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171021377_AddUsers3.resx">
+      <DependentUpon>201905171021377_AddUsers3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171130502_AddGenre.resx">
+      <DependentUpon>201905171130502_AddGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171134089_GenreMovieManyToMany.resx">
+      <DependentUpon>201905171134089_GenreMovieManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171137069_MoviesEdit.resx">
+      <DependentUpon>201905171137069_MoviesEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905171137563_MoviesEdit2.resx">
+      <DependentUpon>201905171137563_MoviesEdit2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

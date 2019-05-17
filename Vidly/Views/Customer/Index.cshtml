@@ -1,0 +1,48 @@
+﻿@model Vidly.Models.CustemersViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@if (!Model.Customers.Any())
+{
+   <h2>No customers yet</h2>
+}
+else
+{
+    <table style="width:100%">
+        <tr>
+            <th>Firstname</th>
+            <th>Subscription type</th>
+            <th>Discount</th>
+
+            <th>Link</th>
+        </tr>
+        @{
+            foreach (var customer in Model.Customers)
+            {
+        <tr>
+            <td>@customer.Name</td>
+            @if (customer.SubModel != null)
+            {
+                <td>@customer.SubModel.Name</td>
+                <td>@customer.SubModel.Discount</td>
+
+            }
+            else
+            {
+                <td> - </td>
+                <td> - </td>
+    
+            }
+            <td>@Html.ActionLink("Click Here", "Detail", "Customer", new { id = customer.Id }, null)</td>
+
+        </tr>
+            }
+        }
+
+    </table>
+}
