@@ -1,0 +1,46 @@
+﻿@model Vidly.Models.Team
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+@using (Html.BeginForm("Save", "Teams"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email)
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach)
+        @Html.TextBoxFor(m => m.Coach, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Note)
+        @Html.TextAreaFor(m => m.Note, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Note)
+
+    </div>
+    @Html.Hidden("Id")
+    @Html.Hidden("Name")
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+
+
+}
+@section scripts
+{   
+@Scripts.Render("~/bundles/jqueryval")
+}

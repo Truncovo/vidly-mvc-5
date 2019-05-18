@@ -1,0 +1,33 @@
+﻿@using Vidly.HtmlHelper
+@using Vidly.Models
+@model Vidly.ViewsModels.TeamsViewModel
+
+@{
+   ViewBag.Title = "title";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+   if (Model.Teams!= null && Model.Teams.Any())
+   {
+<table  style="width:100%">
+    <tr>
+        <th>Team Name</th>
+        <th>Coach</th>
+        <th>e-mail</th>
+        <th>Link</th>
+    </tr>
+    @foreach (var team in Model.Teams)
+    {
+    <tr>
+        <td>@HtmlT.AddTd(team.Name)   </td>
+        <td>@HtmlT.AddTd(team.Coach)  </td>
+        <td>@HtmlT.AddTd(team.Email)  </td>
+        <td>@Html.ActionLink("Click Here", "Edit", "Teams", new { id = team.Id }, null)</td>
+    </tr>
+    }
+</table>
+
+    }
+}
