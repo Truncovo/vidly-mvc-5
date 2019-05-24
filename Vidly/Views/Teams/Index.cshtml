@@ -16,7 +16,9 @@
         <th>Team Name</th>
         <th>Coach</th>
         <th>e-mail</th>
-        <th>Link</th>
+        <th>Edit</th>
+        <th>EditWithoutLogin</th>
+
     </tr>
     @foreach (var team in Model.Teams)
     {
@@ -24,6 +26,9 @@
         <td>@HtmlT.AddTd(team.Name)   </td>
         <td>@HtmlT.AddTd(team.Coach)  </td>
         <td>@HtmlT.AddTd(team.Email)  </td>
+        
+        <td>@Html.ActionLink("Change", "Vertify", "Teams", new { id = team.Id }, null)</td>
+
         <td>@Html.ActionLink("Click Here", "Edit", "Teams", new { id = team.Id }, null)</td>
     </tr>
     }

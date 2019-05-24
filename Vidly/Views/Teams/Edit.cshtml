@@ -1,46 +1,60 @@
-﻿@model Vidly.Models.Team
+﻿@model Vidly.ViewsModels.EditTeamViewModel
 
 @{
     ViewBag.Title = "title";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
 @using (Html.BeginForm("Save", "Teams"))
 {
     @Html.ValidationSummary()
+
     <div class="form-group">
-        @Html.LabelFor(m => m.Email)
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Email)
+        @Html.LabelFor(m => m.Team.Name)
+        @Html.TextBoxFor(m => m.Team.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Team.Name)
 
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Password)
-        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Password)
+        @Html.LabelFor(m => m.Team.Email)
+        @Html.TextBoxFor(m => m.Team.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Team.Email)
+
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Coach)
-        @Html.TextBoxFor(m => m.Coach, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Team.Password)
+        @Html.TextBoxFor(m => m.Team.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Team.Password)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Note)
-        @Html.TextAreaFor(m => m.Note, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Note)
+        @Html.LabelFor(m => m.Team.Coach)
+        @Html.TextBoxFor(m => m.Team.Coach, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Team.Note)
+        @Html.TextAreaFor(m => m.Team.Note, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Team.Note)
 
     </div>
-    @Html.Hidden("Id")
-    @Html.Hidden("Name")
+
+     <div class="form-group">
+         @Html.LabelFor(m => m.Team.CategoryId)
+         @Html.DropDownListFor(m => m.Team.CategoryId, new SelectList(Model.Categories, "Id", "Name"), new { @class = "form-control" })
+         @Html.ValidationMessageFor(m => m.Team.CategoryId)
+    
+     </div>
+
+    @Html.HiddenFor(m => m.Team.Id)
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 
 
 }
 @section scripts
-{   
-@Scripts.Render("~/bundles/jqueryval")
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

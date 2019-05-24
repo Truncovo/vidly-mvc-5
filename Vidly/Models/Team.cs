@@ -17,7 +17,15 @@ namespace Vidly.Models
       public string Note { get; set; }
       public SleepInfo SleepInfoDayOne { get; set; }
       public SleepInfo SleepInfoDayTwo { get; set; }
+      public Category Category { get; set; }
+      public int CategoryId { get; set; }
 
+      public bool HasOwner()
+      {
+         if (Password != null && Email != null)
+            return true;
+         return false;
+      }
    }
 
    public class SleepInfo

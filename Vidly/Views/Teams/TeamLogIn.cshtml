@@ -1,0 +1,28 @@
+﻿@using AutoMapper.Mappers
+@using Vidly.ViewsModels
+@model Vidly.ViewsModels.TeamLoginViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<h2>Log In for editing</h2>
+<h1>@Model.TeamName</h1>
+@using (Html.BeginForm("LogOwner", "Teams"))
+{
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+
+
+    @Html.HiddenFor(m => m.TeamId)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+
+
+}

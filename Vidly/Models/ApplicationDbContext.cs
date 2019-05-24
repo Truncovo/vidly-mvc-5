@@ -12,7 +12,7 @@ namespace Vidly.Models
       }
       public DbSet<Team> Teams { get; set; }
       public DbSet<SleepInfo> SleepInfos { get; set; }
-
+      public DbSet<Category> Categories { get; set; }
       public static ApplicationDbContext Create()
       {
          return new ApplicationDbContext();

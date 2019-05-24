@@ -6,8 +6,5 @@ using Vidly.Models;
 
 namespace Vidly.ViewsModels
 {
-   public class TeamsViewModel
-   {
-      public IEnumerable<Team> Teams { get; set; }
-   }
+ 
 }
